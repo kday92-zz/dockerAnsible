@@ -1,0 +1,40 @@
+- name: Dockerfile
+  hosts: localhost
+  connection: local
+  tasks:
+     - name: Install repositories packages
+       yum:
+         name: "{{ item }}"
+         state: latest
+       with_items:
+         - https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+         - http://download.gluster.org/pub/gluster/glusterfs/3.7/3.7.10/CentOS/glusterfs-epel.repo
+     
+
+     - name: Install repositories packages
+       yum:
+         name: "{{ item }}"
+         state: latest
+       with_items:
+         - php56w
+         - php56w-opcache
+         - mariadb
+         - glusterfs
+         - glusterfs-fuse
+         - glusterfs-server
+         - systemctl
+         - wget
+         - vim
+         - httpd
+
+      - name: Download Drush executable
+        get_url: 
+          url: http://files.drush.org/drush.phar
+          dest: /usr/local/bin/drush
+
+      - name: Add exectable to drush
+        file:
+          path: /usr/local/bin/drush
+          mode: +x
+
+
