@@ -14,7 +14,7 @@
      - name: Install repositories packages
        yum:
          name: "{{ item }}"
-         state: latest
+         state: present
        with_items:
          - php56w
          - php56w-opcache
