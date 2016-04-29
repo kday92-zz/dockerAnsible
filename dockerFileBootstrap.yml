@@ -27,14 +27,14 @@
          - vim
          - httpd
 
-     - name: Download Drush executable
-       get_url: 
-         url: http://files.drush.org/drush.phar
-         dest: /usr/local/bin/drush
+      - name: Download Drush executable
+        get_url: 
+          url: http://files.drush.org/drush.phar
+          dest: /usr/local/bin/drush
 
-     - name: Add exectable to drush
-       file:
-         path: /usr/local/bin/drush
-         mode: +x
+      - name: Add exectable to drush
+        file:
+          path: /usr/local/bin/drush
+          mode: +x
 
 
