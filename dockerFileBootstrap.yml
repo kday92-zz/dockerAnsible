@@ -33,6 +33,6 @@
      - name: Add exectable to drush
        file:
          path: /usr/local/bin/drush
-         mode: u=rwX, g=rX, o=rX
+         mode: "u=rwx, g=rx"
 
 
