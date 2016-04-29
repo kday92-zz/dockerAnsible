@@ -21,7 +21,6 @@
          - mariadb
          - glusterfs
          - glusterfs-fuse
-         - systemctl
          - wget
          - vim
          - httpd
