@@ -9,6 +9,7 @@
        with_items:
          - https://centos7.iuscommunity.org/ius-release.rpm 
          - http://download.gluster.org/pub/gluster/glusterfs/3.7/3.7.10/CentOS/glusterfs-epel.repo
+        
 
 
      - name: Install repositories packages
@@ -24,7 +25,21 @@
          - wget
          - vim
          - httpd
-
+         - php56u-mysqlnd
+         - php56u-pdo
+         - php56u-ldap
+         - php56u-mbstring
+         - php56u-mcrypt
+         - php56u-soap
+         - php56u-dba
+         - php56u-pecl-memcached
+         - php56u-pecl-igbinary
+         - php56u-pecl-memcache
+         - php56u-bcmath
+         - php56u-tidy
+         - php56u-gd
+         - php56u-xmlrpc
+         - memcached
      - name: Download Drush executable
        get_url: 
          url: http://files.drush.org/drush.phar
