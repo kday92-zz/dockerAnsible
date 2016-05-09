@@ -7,7 +7,7 @@
          name: "{{ item }}"
          state: present
        with_items:
-         - https://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/ 
+         - https://dl.iuscommunity.org/pub/ius/stable/Redhat/7/x86_64/repoview/
          - http://download.gluster.org/pub/gluster/glusterfs/3.7/3.7.10/CentOS/glusterfs-epel.repo
 
 
