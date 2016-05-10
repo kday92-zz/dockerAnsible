@@ -40,6 +40,7 @@
          - php56u-gd
          - php56u-xmlrpc
          - memcached
+   
      - name: Download Drush executable
        get_url: 
          url: http://files.drush.org/drush.phar
@@ -49,5 +50,53 @@
        file:
          path: /usr/local/bin/drush
          mode: 0750 
+     
+     - name: Setup global drush permissions
+       file:
+         state: directory
+         path: /usr/share/drush/commands
+         mode: 0755
+
+     - name: Create a docroot
+       file:
+         path: /var/www/html      
+         owner: apache
+         group: apache
+         state: directory
+
+     - name: Create a edit vhost 
+       template: 
+         src: edit-vhost.conf 
+         dest: /etc/httpd/conf.d/edit-vhost.conf 
+         owner: root 
+         group: root
+         mode: 0644
+   
+
+     - name: Create an public vhost
+       template:
+         src: public-vhost.conf
+         dest: /etc/httpd/conf.d/public-vhost.conf
+         owner: root
+         group: root
+         mode: 0644
 
 
+
+
+   #  - name: Deploy httpd.conf
+
+   #  - name: Deploy certificates
+
+   #  - name: Deploy generic settings.php
+
+   #  - name: Deploy drush.ini
+
+   #  - name: Deploy php.ini
+   #  - name: Deploy apc.ini??
+     - name: Download drush rr
+       command: /usr/local/bin/drush dl registry_rebuild --destination /usr/share/drush/commands
+       
+   #  - name: Set gluster mount point
+   #  - name: Checkout code from git
+   #  - name: Deploy setting configuration 
