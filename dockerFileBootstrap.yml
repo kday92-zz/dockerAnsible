@@ -40,7 +40,8 @@
          - php56u-gd
          - php56u-xmlrpc
          - memcached
-   
+         - php56u-fpm-httpd
+ 
      - name: Download Drush executable
        get_url: 
          url: http://files.drush.org/drush.phar
@@ -49,7 +50,7 @@
      - name: Add exectable to drush
        file:
          path: /usr/local/bin/drush
-         mode: 0750 
+         mode: 0755 
      
      - name: Setup global drush permissions
        file:
@@ -94,8 +95,8 @@
 
    #  - name: Deploy php.ini
    #  - name: Deploy apc.ini??
-    # - name: Download drush rr
-    #   command: /usr/local/bin/drush dl -y registry_rebuild --destination /usr/share/drush/commands
+     - name: Download drush rr
+       command: /usr/local/bin/drush dl -y registry_rebuild-7.x --destination /usr/share/drush/commands
        
    #  - name: Set gluster mount point
    #  - name: Checkout code from git
