@@ -96,7 +96,7 @@
    #  - name: Deploy php.ini
    #  - name: Deploy apc.ini??
      - name: Download drush rr
-       command: /usr/local/bin/drush dl -y registry_rebuild-7.x --destination /usr/share/drush/commands
+       command: /usr/local/bin/drush dl -y registry_rebuild-7.x --destination=/usr/share/drush/commands 
        
    #  - name: Set gluster mount point
    #  - name: Checkout code from git
