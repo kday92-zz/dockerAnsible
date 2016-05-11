@@ -65,9 +65,17 @@
          group: apache
          state: directory
 
+
+     - name: Create a cert folder
+       file:
+         path: /etc/httpd/conf.d
+         owner: apache
+         group: apache
+         state: directory
+
+
      - name: Create a self signed certificate
        command: openssl req -new -nodes -x509 -subj "/C=US/ST=Virginia/L=Portland/O=IT/CN=emmawatson" -days 3650 -keyout /etc/httpd/conf.d/server.key -out /etc/httpd/conf.d/server.crt -extensions v3_ca
-       notify: reload nginx
 
 
 
