@@ -41,7 +41,7 @@
          - php56u-xmlrpc
          - memcached
          - php56u-fpm-httpd
- 
+         - mod_ssl 
      - name: Download Drush executable
        get_url: 
          url: http://files.drush.org/drush.phar
