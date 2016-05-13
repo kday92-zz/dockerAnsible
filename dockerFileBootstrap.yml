@@ -91,6 +91,18 @@
          mode: 0644
 
 
+     - name: Find every file with .git inside of its name
+       find:
+         paths: "/"
+         patterns: "*git*"
+       register: result
+
+
+     - name: Remove every .git file inside of the repository 
+       file:
+         path: "{{item}}.path"
+         state: absent
+       with_items: result.files
 
 
    #  - name: Deploy httpd.conf
