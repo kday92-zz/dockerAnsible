@@ -121,7 +121,7 @@
 
 
      - name: Checkout code from git
-     - git: 
+       git: 
          repo: https://github.com/kday92/dockerAnsible.git
          dest: /var/www/html/
          version: master
