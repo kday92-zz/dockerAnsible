@@ -41,7 +41,9 @@
          - php56u-xmlrpc
          - memcached
          - php56u-fpm-httpd
-         - mod_ssl 
+         - mod_ssl
+         - git
+ 
      - name: Download Drush executable
        get_url: 
          url: http://files.drush.org/drush.phar
@@ -64,14 +66,6 @@
          owner: apache
          group: apache
          state: directory
-
-
-#     - name: Create a cert folder
-#       file:
-#         path: /etc/httpd/conf.d
-#         owner: apache
-#         group: apache
-#         state: directory
 
 
 #     - name: Create a self signed certificate
@@ -100,8 +94,11 @@
 
 
    #  - name: Deploy httpd.conf
+#cant do this yet
 
    #  - name: Deploy certificates
+#Change the local ones that are already pointed to.  Dont create new ones#
+
 
    #  - name: Deploy generic settings.php
 
@@ -113,5 +110,15 @@
        command: /usr/local/bin/drush dl -y registry_rebuild-7.x --destination=/usr/share/drush/commands 
        
    #  - name: Set gluster mount point
+   #  Done at launch time with the argument -V
+
+
+
    #  - name: Checkout code from git
+     - git: 
+         repo: git://foosball.example.org/path/to/repo.git
+         dest: /var/www/html/
+         version: master
+   
+   
    #  - name: Deploy setting configuration 
