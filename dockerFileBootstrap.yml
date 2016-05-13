@@ -100,7 +100,13 @@
 #Change the local ones that are already pointed to.  Dont create new ones#
 
 
-   #  - name: Deploy generic settings.php
+     - name: Deploy generic settings.php
+     - git:
+         repo: https://github.com/kday92/dockerAnsible/settings.php
+         dest: /var/www/html/
+         version: master
+
+
 
    #  - name: Deploy drush.ini
 
@@ -114,9 +120,9 @@
 
 
 
-   #  - name: Checkout code from git
+     - name: Checkout code from git
      - git: 
-         repo: git://foosball.example.org/path/to/repo.git
+         repo: https://github.com/kday92/dockerAnsible.git
          dest: /var/www/html/
          version: master
    
