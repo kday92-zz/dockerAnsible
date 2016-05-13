@@ -100,11 +100,11 @@
 #Change the local ones that are already pointed to.  Dont create new ones#
 
 
-     - name: Deploy generic settings.php
-     - git:
-         repo: https://github.com/kday92/dockerAnsible/settings.php
-         dest: /var/www/html/
-         version: master
+#     - name: Deploy generic settings.php -------The settings.php is inside of the repository
+#     - git:
+#         repo: https://github.com/kday92/dockerAnsible/settings.php
+#         dest: /var/www/html/
+#         version: master
 
 
 
