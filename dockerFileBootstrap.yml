@@ -101,20 +101,20 @@
 
 
 #     - name: Deploy generic settings.php -------The settings.php is inside of the repository
-#     - git:
-#         repo: https://github.com/kday92/dockerAnsible/settings.php
-#         dest: /var/www/html/
-#         version: master
-
 
 
    #  - name: Deploy drush.ini
 
-   #  - name: Deploy php.ini
+   #  - name: Deploy php.ini --------- Inside of the repository
    #  - name: Deploy apc.ini??
+
+
+
      - name: Download drush rr
        command: /usr/local/bin/drush dl -y registry_rebuild-7.x --destination=/usr/share/drush/commands 
        
+
+
    #  - name: Set gluster mount point
    #  Done at launch time with the argument -V
 
