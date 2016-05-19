@@ -167,9 +167,12 @@
 #         name: php56u-fpm
 #         state: started
    
+     - name: Start php fpm
+       command: ./usr/sbin/php-fpm
+
      - name: Deploy php-fpm   
        command: chkconfig php-fpm on
-
+     
    
 
 #  - name: Deploy setting configuration 
