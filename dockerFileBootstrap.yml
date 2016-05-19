@@ -158,24 +158,24 @@
 
    
      - name: Start php fpm
-       command: ./usr/sbin/php-fpm
+       command: /usr/sbin/php-fpm
 
 
      - name: File cleanup of some useless repo additions
        file:
          path: /var/www/html/httpd.conf
          state: absent
-       file:
-         path: /var/www/html/php.conf
-         state: absent
-       file:
-         path: /var/www/html/testvhost.conf
-         state: absent
-       file:
-         path: /var/www/html/Dockerfile
-         state: absent
-       file:
-         path: /var/www/html/dockerFileBootstrap.yml
-         state: absent
+#       file:
+#         path: /var/www/html/php.conf
+#         state: absent
+#       file:
+#         path: /var/www/html/testvhost.conf
+#         state: absent
+#       file:
+#         path: /var/www/html/Dockerfile
+#         state: absent
+#       file:
+#         path: /var/www/html/dockerFileBootstrap.yml
+#         state: absent
 
 #  - name: Deploy setting configuration 
