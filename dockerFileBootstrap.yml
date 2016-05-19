@@ -94,7 +94,7 @@
      - name: Create a basic vhost
        template:
          src: testvhost.conf
-         dest: /etc/httpd/conf.d/edit-vhost.conf
+         dest: /etc/httpd/conf.d/testvhost.conf
          owner: root
          group: root
          mode: 0644
