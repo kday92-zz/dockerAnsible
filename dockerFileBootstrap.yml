@@ -142,14 +142,28 @@
      - name: Copy php.ini for php-fpm
        copy:
          src: /var/www/html/php.conf
-         dest: /etc/httpd/conf.d/
+         dest: /etc/httpd/conf.d
          owner: root
          group: root
          mode: 0644
 
+     - name: Copy httpd.conf
+       copy:
+         src: /var/www/html/httpd.conf
+         dest: /etc/httpd/conf
+         owner: root
+         group: root
+         mode: 0644
 
-     - name: Turn on php-fpm
-       command: systemctl start php56u-fpm
+     - name: Restart apache
+       service:
+         name: httpd
+         state: reloaded
+
+#     - name: Turn on php-fpm
+#       service:
+#         name: php56u-fpm
+#         state: started
    
      - name: Deploy php-fpm   
        command: chkconfig php56u-fpm on
