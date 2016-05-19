@@ -100,34 +100,11 @@
          group: root
          mode: 0644
 
-     - name: Find every file with .git inside of its name
-       find:
-         paths: "/"
-         patterns: "*git*"
-       register: result
-
-
-     - name: Remove every .git file inside of the repository 
-       file:
-         path: "{{item}}.path"
-         state: absent
-       with_items: result.files
-
-
-   #  - name: Deploy httpd.conf
-#cant do this yet
-
    #  - name: Deploy certificates
 #Change the local ones that are already pointed to.  Dont create new ones#
 
 
 #     - name: Deploy generic settings.php -------The settings.php is inside of the repository
-
-
-   #  - name: Deploy drush.ini
-
-   #  - name: Deploy php.ini --------- Inside of the repository
-   #  - name: Deploy apc.ini??
 
 
 
@@ -146,6 +123,22 @@
          repo: https://github.com/kday92/dockerAnsible.git
          dest: /var/www/html/
          version: master
+
+
+     - name: Find every file with .git inside of its name
+       find:
+         paths: "/"
+         patterns: "*git*"
+       register: result
+
+
+     - name: Remove every .git file inside of the repository
+       file:
+         path: "{{item}}.path"
+         state: absent
+       with_items: result.files
+
+
 
      - name: Copy php.ini for php-fpm
        copy:
@@ -167,9 +160,22 @@
      - name: Start php fpm
        command: ./usr/sbin/php-fpm
 
-     - name: Deploy php-fpm   
-       command: chkconfig php-fpm on
-     
-   
+
+     - name: File cleanup of some useless repo additions
+       file:
+         path: /var/www/html/httpd.conf
+         state: absent
+       file:
+         path: /var/www/html/php.conf
+         state: absent
+       file:
+         path: /var/www/html/testvhost.conf
+         state: absent
+       file:
+         path: /var/www/html/Dockerfile
+         state: absent
+       file:
+         path: /var/www/html/dockerFileBootstrap.yml
+         state: absent
 
 #  - name: Deploy setting configuration 
