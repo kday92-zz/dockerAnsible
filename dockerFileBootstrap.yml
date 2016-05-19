@@ -74,23 +74,30 @@
 
 
 
-     - name: Create a edit vhost 
-       template: 
-         src: edit-vhosts.conf 
-         dest: /etc/httpd/conf.d/edit-vhost.conf 
-         owner: root 
-         group: root
-         mode: 0644
+#     - name: Create a edit vhost 
+#       template: 
+#         src: edit-vhosts.conf 
+#         dest: /etc/httpd/conf.d/edit-vhost.conf 
+#         owner: root 
+#         group: root
+#         mode: 0644
    
 
-     - name: Create an public vhost
+#     - name: Create an public vhost
+#       template:
+#        src: public-vhosts.conf
+#         dest: /etc/httpd/conf.d/public-vhost.conf
+#         owner: root
+#         group: root
+#         mode: 0644
+
+     - name: Create a basic vhost
        template:
-         src: public-vhosts.conf
-         dest: /etc/httpd/conf.d/public-vhost.conf
+         src: testvhost.conf
+         dest: /etc/httpd/conf.d/edit-vhost.conf
          owner: root
          group: root
          mode: 0644
-
 
      - name: Find every file with .git inside of its name
        find:
