@@ -43,6 +43,7 @@
          - php56u-fpm-httpd
          - php56u-fpm
          - mod_ssl
+         - net-tools
          - git
  
      - name: Download Drush executable
@@ -162,10 +163,6 @@
          group: root
          mode: 0644
 
-#     - name: Turn on php-fpm
-#       service:
-#         name: php56u-fpm
-#         state: started
    
      - name: Start php fpm
        command: ./usr/sbin/php-fpm
