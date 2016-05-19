@@ -155,11 +155,6 @@
          group: root
          mode: 0644
 
-     - name: Restart apache
-       service:
-         name: httpd
-         state: reloaded
-
 #     - name: Turn on php-fpm
 #       service:
 #         name: php56u-fpm
