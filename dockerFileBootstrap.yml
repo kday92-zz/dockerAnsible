@@ -161,7 +161,7 @@
 #         state: started
    
      - name: Deploy php-fpm   
-       command: chkconfig php56u-fpm on
+       command: chkconfig php-fpm on
 
    
 
