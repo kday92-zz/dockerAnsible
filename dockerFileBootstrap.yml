@@ -41,6 +41,7 @@
          - php56u-xmlrpc
          - memcached
          - php56u-fpm-httpd
+         - php56u-fpm
          - mod_ssl
          - git
  
@@ -137,6 +138,22 @@
          repo: https://github.com/kday92/dockerAnsible.git
          dest: /var/www/html/
          version: master
+
+     - name: Copy php.ini for php-fpm
+       copy:
+         src: /var/www/html/php.conf
+         dest: /etc/httpd/conf.d/
+         owner: root
+         group: root
+         mode: 0644
+
+
+     - name: Turn on php-fpm
+       command: systemctl start php56u-fpm
    
+     - name: Deploy php-fpm   
+       command: chkconfig php56u-fpm on
+
    
-   #  - name: Deploy setting configuration 
+
+#  - name: Deploy setting configuration 
