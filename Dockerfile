@@ -18,5 +18,5 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 80 443 3306
 RUN /usr/sbin/php-fpm
-CMD ["/bin/bash", "/start.sh"]
+CMD service php-fpm start && service httpd start
 #CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
