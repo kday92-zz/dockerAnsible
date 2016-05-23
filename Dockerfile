@@ -15,7 +15,7 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 COPY supervisord.conf /usr/etc/supervisord.conf
-
+RUN rm -rf supervisord.conf
 VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 80 443 3306
 CMD ["/usr/bin/supervisord"]

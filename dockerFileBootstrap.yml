@@ -158,9 +158,6 @@
          mode: 0644
 
    
-     - name: Start php fpm
-       command: /usr/sbin/php-fpm
-
 
      - name: Install supervisor
        command: easy_install supervisor
@@ -172,14 +169,15 @@
 #       file:
 #         path: /var/www/html/php.conf
 #         state: absent
-#       file:
-#         path: /var/www/html/testvhost.conf
-#         state: absent
-#       file:
-#         path: /var/www/html/Dockerfile
-#         state: absent
-#       file:
-#         path: /var/www/html/dockerFileBootstrap.yml
-#         state: absent
+
+     - name: Remove Dockerfile from httpd
+       file:
+         path: /var/www/html/Dockerfile
+         state: absent
+
+     - name: Remove YML file
+       file:
+         path: /var/www/html/dockerFileBootstrap.yml
+         state: absent
 
 #  - name: Deploy setting configuration 
