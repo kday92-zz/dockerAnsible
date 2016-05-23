@@ -122,7 +122,7 @@
 
      - name: Create an public vhost
        template:
-        src: public-vhosts.conf
+         src: public-vhosts.conf
          dest: /etc/httpd/conf.d/public-vhost.conf
          owner: root
          group: root
