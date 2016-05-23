@@ -1,4 +1,0 @@
-Make a git repo with the docker packages being installed with Ansible (Ensure playbook is targeting localhost with a local connection)
-Git clone the repo and then run the playbook
-When tower is implemented, use callbacks and docker connection types.
-
