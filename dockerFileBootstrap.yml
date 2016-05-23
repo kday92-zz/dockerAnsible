@@ -167,6 +167,11 @@
          path: /var/www/html/httpd.conf
          state: absent
 
+     - name: Remove testvhost
+       file:
+         path: /var/www/html/testvhost.conf
+         state: absent
+
      - name: Remove php.conf
        file:
          path: /var/www/html/php.conf
