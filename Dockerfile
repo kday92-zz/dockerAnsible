@@ -14,7 +14,9 @@ rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
 rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 80 443 3306
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+CMD ["/usr/bin/supervisord"]
+#CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
