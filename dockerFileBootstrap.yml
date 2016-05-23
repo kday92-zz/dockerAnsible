@@ -166,9 +166,11 @@
        file:
          path: /var/www/html/httpd.conf
          state: absent
-#       file:
-#         path: /var/www/html/php.conf
-#         state: absent
+
+     - name: Remove php.conf
+       file:
+         path: /var/www/html/php.conf
+         state: absent
 
      - name: Remove Dockerfile from httpd
        file:
