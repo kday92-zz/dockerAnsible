@@ -161,6 +161,10 @@
        command: /usr/sbin/php-fpm
 
 
+     - name: Install supervisor using pip
+       command: pip install supervisor
+
+
      - name: File cleanup of some useless repo additions
        file:
          path: /var/www/html/httpd.conf
