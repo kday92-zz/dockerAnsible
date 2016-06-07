@@ -103,7 +103,7 @@
 
 
      - name: Download drush rr
-       command: /usr/local/bin/drush dl -y registry_rebuild-7.x --destination=/usr/share/drush/commands 
+       command: /usr/local/bin/drush dl -y registry_rebuild-7.x --destination=/usr/share/drush/commands --debug
        
 
 
