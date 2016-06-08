@@ -18,5 +18,5 @@ COPY supervisord.conf /usr/etc/supervisord.conf
 RUN rm -rf supervisord.conf
 VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 80 443
-CMD ["/usr/bin/supervisord"]
-#CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+#CMD ["/usr/bin/supervisord"]
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
