@@ -18,6 +18,6 @@ COPY supervisord.conf /usr/etc/supervisord.conf
 RUN rm -rf supervisord.conf
 #RUN cd /var/www/html && git clone <need the url for here>
 VOLUME [ "/sys/fs/cgroup" ]
-EXPOSE 80 443
+EXPOSE 8080 443
 CMD ["/usr/bin/supervisord"]
-#CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+#CMD ["su", "-", "apache", "-c", "/usr/sbin/httpd", "-D", "FOREGROUND"]
