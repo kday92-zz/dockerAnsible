@@ -16,7 +16,6 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 COPY supervisord.conf /usr/etc/supervisord.conf
 RUN rm -rf supervisord.conf
-#RUN cd /var/www/html && git clone <need the url for here>
 VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 8080 443
 CMD ["/usr/bin/supervisord"]
