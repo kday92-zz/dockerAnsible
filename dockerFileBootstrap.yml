@@ -2,15 +2,27 @@
   hosts: localhost
   connection: local
   tasks:
+#     - name: Install repositories packages
+#       yum:
+#         name: "{{ item }}"
+#         state: present
+#       with_items:
+#         - https://centos7.iuscommunity.org/ius-release.rpm 
+#         - http://download.gluster.org/pub/gluster/glusterfs/3.7/3.7.10/CentOS/glusterfs-epel.repo
+        
      - name: Install repositories packages
        yum:
          name: "{{ item }}"
          state: present
+         baseurl: 
        with_items:
-         - https://centos7.iuscommunity.org/ius-release.rpm 
-         - http://download.gluster.org/pub/gluster/glusterfs/3.7/3.7.10/CentOS/glusterfs-epel.repo
-        
+         - https://centos7.iuscommunity.org/ius-release.rpm
 
+     - name: Install the gluster repo
+       get_url:
+         url: "http://download.gluster.org/pub/gluster/glusterfs/3.7/3.7.10/CentOS/glusterfs-epel.repo" 
+         dest: "/etc/yum.repos.d/glusterfs-epel.repo"
+         mode: 0644
 
      - name: Install repositories packages
        yum:
