@@ -134,6 +134,7 @@
        git:
          repo: git@bitbucket.org:canderson686/base_test.git 
          dest: /var/www/html/
+         accept_hostkey: yes
          version: master
 
      - name: Create an public vhost
