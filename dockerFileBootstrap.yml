@@ -132,7 +132,7 @@
 
      - name: Checkout the test website from bitbucket
        git:
-         repo: git@bitbucket.org:canderson686/base_test.git 
+         repo: https://kdaybtg@bitbucket.org/canderson686/base_test.git
          dest: /var/www/html/
          accept_hostkey: yes
          version: master
