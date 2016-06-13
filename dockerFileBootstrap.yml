@@ -14,7 +14,7 @@
        yum:
          name: "{{ item }}"
          state: present
-         baseurl: 
+#         baseurl: 
        with_items:
          - https://centos7.iuscommunity.org/ius-release.rpm
 
