@@ -118,11 +118,11 @@
          dest: /var/www/html/
          version: master
 
-#     - name: Checkout the test website from git
-#       git:
-#         repo: https://github.com/kday92/dockerAnsible.git
-#         dest: /var/www/html/
-#         version: master
+     - name: Checkout the test website from bitbucket
+       git:
+         repo: https://kdaybtg@bitbucket.org/canderson686/base_test.git
+         dest: /var/www/html/
+         version: master
 
      - name: Create an public vhost
        template:
