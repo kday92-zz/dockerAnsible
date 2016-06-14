@@ -141,8 +141,8 @@
 
      - name: Find every file with .git inside of its name
        find:
-         paths: "/"
-         patterns: "*git*"
+         paths: "/var/www/html/"
+         patterns: "*.git*"
        register: result
 
 
@@ -203,6 +203,7 @@
 
      - name: Checkout the test website from bitbucket
        git:
+         clone: yes
          repo: https://NerdsRope:testing123@bitbucket.org/canderson686/base_test.git
          dest: /var/www/html
          force: yes
