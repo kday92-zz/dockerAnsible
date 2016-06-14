@@ -207,6 +207,7 @@
          dest: /var/www/html
          clone: yes
          force: yes
+         recursive: yes
          version: develop
 
 
