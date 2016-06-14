@@ -130,13 +130,6 @@
          dest: /var/www/html/
          version: master
 
-     - name: Checkout the test website from bitbucket
-       git:
-         repo: https://NerdsRope:testing123@bitbucket.org/canderson686/base_test.git 
-         dest: /var/www/html/
-         accept_hostkey: yes
-         version: master
-
      - name: Create an public vhost
        template:
          src: public-vhosts.conf
@@ -206,5 +199,12 @@
        file:
          path: /var/www/html/dockerFileBootstrap.yml
          state: absent
+
+
+     - name: Checkout the test website from bitbucket
+       git:
+         repo: https://NerdsRope:testing123@bitbucket.org/canderson686/base_test.git
+         dest: /var/www/html/
+         version: master
 
 #  - name: Deploy setting configuration 
