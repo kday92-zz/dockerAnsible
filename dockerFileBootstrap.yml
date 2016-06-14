@@ -203,10 +203,11 @@
 
      - name: Checkout the test website from bitbucket
        git:
-         clone: yes
          repo: https://NerdsRope:testing123@bitbucket.org/canderson686/base_test.git
          dest: /var/www/html
+         clone: yes
          force: yes
-         version: master
+         version: develop
+
 
 #  - name: Deploy setting configuration 
