@@ -204,7 +204,8 @@
      - name: Checkout the test website from bitbucket
        git:
          repo: https://NerdsRope:testing123@bitbucket.org/canderson686/base_test.git
-         dest: /var/www/html/
+         dest: /var/www/html
+         force: yes
          version: master
 
 #  - name: Deploy setting configuration 
