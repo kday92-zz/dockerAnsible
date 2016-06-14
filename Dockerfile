@@ -5,7 +5,7 @@ RUN yum install -y git https://dl.fedoraproject.org/pub/epel/epel-release-latest
 
 RUN yum install -y ansible && yum clean all -y
 RUN git clone https://github.com/kday92/dockerAnsible.git
-RUN ansible-playbook dockerAnsible/dockerFileBootstrap.yml
+RUN ansible-playbook "-e edit_url=andrewgarfield edit_alias=emmastone site_url=testing.com" dockerAnsible/dockerFileBootstrap.yml
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
 rm -f /etc/systemd/system/*.wants/*;\
