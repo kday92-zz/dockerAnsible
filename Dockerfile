@@ -17,6 +17,6 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 COPY supervisord.conf /usr/etc/supervisord.conf
 RUN rm -rf supervisord.conf
 VOLUME [ "/sys/fs/cgroup" ]
-EXPOSE 80 443
+EXPOSE 80 443 8080
 CMD ["/usr/bin/supervisord"]
 #CMD ["su", "-", "apache", "-c", "/usr/sbin/httpd", "-D", "FOREGROUND"]
