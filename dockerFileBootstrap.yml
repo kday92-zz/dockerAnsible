@@ -53,8 +53,6 @@
          - php56u-gd
          - php56u-xmlrpc
          - memcached
-         - php56u-fpm-httpd
-         - php56u-fpm
          - mod_ssl
          - net-tools
          - git
@@ -154,13 +152,13 @@
 
 
 
-     - name: Copy php.ini for php-fpm
-       copy:
-         src: /var/www/html/php.conf
-         dest: /etc/httpd/conf.d
-         owner: root
-         group: root
-         mode: 0644
+#     - name: Copy php.ini for php-fpm
+#       copy:
+#         src: /var/www/html/php.conf
+#         dest: /etc/httpd/conf.d
+#         owner: root
+#         group: root
+#         mode: 0644
 
      - name: Copy httpd.conf
        copy:
