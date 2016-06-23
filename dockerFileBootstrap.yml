@@ -127,7 +127,10 @@
          repo: https://github.com/kday92/dockerAnsible.git
          dest: /var/www/html/
          version: master
-
+     
+     - name: Move database file
+       command: mv /var/www/html/baseTest.sql /var/www/
+     
      - name: Create an public vhost
        template:
          src: public-vhosts.conf
