@@ -132,7 +132,7 @@
        command: mv /var/www/html/baseTest.sql /var/www/
      
      - name: Move the setting file
-       command: mv /var/www/html/setting.php /var/www/     
+       command: mv /var/www/html/settings.php /var/www/     
      
      - name: Create an public vhost
        template:
