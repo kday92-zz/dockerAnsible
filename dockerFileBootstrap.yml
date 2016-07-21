@@ -171,7 +171,6 @@
          group: root
          mode: 0644
 
-   
 
      - name: Install supervisor
        command: easy_install supervisor
@@ -211,5 +210,13 @@
          recursive: yes
          version: develop
 
+
+     - name: Copy settings.php over to the right directory
+       copy:
+         src: /var/www/html/settings.php
+         dest: /var/www/html/docroot/sites/default/
+         owner: apache
+         group: apache
+         mode: 600  
 
 #  - name: Deploy setting configuration 
