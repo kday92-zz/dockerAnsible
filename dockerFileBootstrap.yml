@@ -131,6 +131,9 @@
      - name: Move database file
        command: mv /var/www/html/baseTest.sql /var/www/
      
+     - name: Move the setting file
+       command: mv /var/www/html/setting.php /var/www/     
+     
      - name: Create an public vhost
        template:
          src: public-vhosts.conf
@@ -213,10 +216,8 @@
 
      - name: Copy settings.php over to the right directory
        copy:
-         src: /var/www/html/settings.php
+         src: /var/www/settings.php
          dest: /var/www/html/docroot/sites/default/
          owner: apache
          group: apache
          mode: 600  
-
-#  - name: Deploy setting configuration 
