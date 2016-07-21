@@ -220,4 +220,4 @@
          dest: /var/www/html/docroot/sites/default/
          owner: apache
          group: apache
-         mode: 600  
+         mode: 777  
