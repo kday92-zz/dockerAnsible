@@ -16,7 +16,6 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 COPY supervisord.conf /usr/etc/supervisord.conf
 RUN rm -rf supervisord.conf
-RUN export TERM="dumb"
 RUN chown -R apache:apache /var/www/html
 VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 80 443 8080
