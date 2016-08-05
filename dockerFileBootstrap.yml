@@ -52,7 +52,6 @@
          - php56u-tidy
          - php56u-gd
          - php56u-xmlrpc
-         - memcached
          - mod_ssl
  
      - name: Download Drush executable
