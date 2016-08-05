@@ -54,8 +54,6 @@
          - php56u-xmlrpc
          - memcached
          - mod_ssl
-         - net-tools
-         - git
  
      - name: Download Drush executable
        get_url: 
