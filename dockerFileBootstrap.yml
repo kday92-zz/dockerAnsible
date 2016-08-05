@@ -126,8 +126,8 @@
          dest: /var/www/html/
          version: master
      
-     - name: Move database file
-       command: mv /var/www/html/baseTest.sql /var/www/
+#     - name: Move database file
+#       command: mv /var/www/html/baseTest.sql /var/www/
      
      - name: Move the setting file
        command: mv /var/www/html/settings.php /var/www/     
@@ -173,8 +173,8 @@
          mode: 0644
 
 
-     - name: Install supervisor
-       command: easy_install supervisor
+#     - name: Install supervisor
+#       command: easy_install supervisor
 
      - name: File cleanup of some useless repo additions
        file:
